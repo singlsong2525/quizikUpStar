@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 400px;
+}
+
+.sleep-image {
+    width: 100%;
+    border-radius: 10px;
+     /* mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 60%, black 80%, transparent), 
+                  linear-gradient(to bottom, transparent, black 60%, black 80%, transparent); */
+    transition: transform 0.3s ease;
+}
+
+.wake-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #658f6c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.wake-button:hover {
+    background-color: #3e5943;
+}
+
+.wake-button:disabled {
+    background-color: #658f6c; /* Бледный цвет для неактивной кнопки */
+    cursor: not-allowed; /* Изменение курсора на "нельзя" */
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #3e5943;
+}
+
+#progressContainer {
+    width: 100%;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#progressBar {
+    width: 0%;
+    height: 20px;
+    background-color: #3e5943;
+    transition: width 0.5s; /* Плавный переход */
+}
