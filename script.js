@@ -1,5 +1,5 @@
 document.getElementById('wakeButton').addEventListener('click', function() {
-    const sleepVideo = document.getElementById('sleepImage');
+    const sleepImage = document.getElementById('sleepImage');
     const message = document.getElementById('message');
     const wakeButton = document.getElementById('wakeButton');
     const progressBar = document.getElementById('progressBar');
@@ -7,13 +7,6 @@ document.getElementById('wakeButton').addEventListener('click', function() {
     // Деактивировать кнопку и изменить её стиль
     wakeButton.disabled = true;
     wakeButton.classList.add('disabled');
-
-    // Для изменения источника видео
-    function changeVideoSource(newSource) {
-        sleepVideo.innerHTML = `<source src="${newSource}" type="video/mp4">`;
-        sleepVideo.load();
-        sleepVideo.play();
-    }
 
     // Показать сообщение о том, что Дежурный услышал
     message.textContent = 'Бот услышал и скоро проснется...';
@@ -32,7 +25,7 @@ document.getElementById('wakeButton').addEventListener('click', function() {
     }, 1200); // Обновляем каждые 1200 миллисекунд
 
     setTimeout(function() {
-        changeVideoSource('waiting.mp4');
+        sleepImage.src = 'waiting.png';
         message.textContent = 'Бот просыпается! Еще совсем чуть-чуть';
     }, 4000); // 4000 миллисекунд = 4 секунд
 
